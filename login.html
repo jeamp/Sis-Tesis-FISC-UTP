@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <title>Login</title>
+
+    <style>
+        .logo-utp{
+            margin-top: 10%;
+        }
+        .imagen img{
+            width: 300px;
+            margin-block-end: 2%;
+        }
+        .derecha{
+            height:auto;
+            max-height: 100%;
+            padding-block-end: 5%;
+        }
+        .izquierda{
+            background-color:#801F71;
+            max-height: 100%;
+            background-image: url('dist/img/campus.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .logo-utp img{
+            width: 150px;
+            margin-top: 10%;
+        }
+        .card{
+            margin-top: 2%;
+            text-align: left;
+            width: 60%;
+            margin-left: 20%;
+            border: 0px;
+        }
+        .olvide{
+            font-size: 15px;
+            float: right;
+            margin-top: 1%;
+        }
+        .welcome{
+            margin-top: 3%;
+            color:#707070;
+        }
+        .primero{
+            background-color: #801F71;
+            color: white;
+        }
+        .botones{
+            text-align: center;
+            margin-top: 15%;
+        }
+        .bt1{
+            margin-right: 5%;
+            width: 40%;
+            color: white;
+        }
+        .bt1 a{
+            color: white;
+        }
+        .bt2{
+            width: 40%;
+        }
+        .utp{
+            margin-top: 60%;
+            font-size: 15px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid w-100">
+        <div class="row w-100">
+            
+            <div class="col-lg  text-center justify-content-center izquierda"  >
+                <div class="imagen">
+                    
+                </div>
+            </div>
+           
+            <div class="col-lg  derecha text-center">
+                <div class="logo-utp">
+                    <img src="dist/img/logo.jpg">
+                </div>
+                
+                <div class="welcome">
+                    <p class="">Bienvenido, Iniciar Sesión en el sistema</p>
+                </div>
+                
+                <div class="formulario card">
+                    <form>
+                        <div class="form-group ">
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Usuario">
+                        </div>
+                        <div class="form-group ">
+                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Contraseña">
+                            <div class="form-group"> <a class="olvide" href="#">Olvide mi contraseña</a></div>
+                        </div>
+                        <div class="form-group botones">
+                          <button type="submit" class="btn primero bt1">  <a href="paginas/Estudiante/index.html">Ingresar</a></button>
+                            <button type="submit" class="btn btn-outline-secondary bt2">Registrase</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="utp">
+                   <a href="http://www.utp.ac.pa/"> Ir a Utp oficial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dist/js/bootstrap.js"></script>
+</body>
+</html>
