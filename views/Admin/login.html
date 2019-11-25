@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../dist/css/bootstrap.css">
     <title>Login</title>
 
     <style>
@@ -23,7 +23,7 @@
         .izquierda{
             background-color:#801F71;
             max-height: 100%;
-            background-image: url('dist/img/campus.jpg');
+            background-image: url('./dist/img/campus.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -85,7 +85,7 @@
            
             <div class="col-lg  derecha text-center">
                 <div class="logo-utp">
-                    <img src="dist/img/logo.jpg">
+                    <img src="./dist/img/logo.jpg">
                 </div>
                 
                 <div class="welcome">
@@ -93,17 +93,17 @@
                 </div>
                 
                 <div class="formulario card">
-                    <form>
+                    <form class="form-signin"  method="POST" action ="./controllers/LoginController.php">
                         <div class="form-group ">
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Usuario">
+                            <input type="text" class="form-control" id="formGroupExampleInput" name="correo" placeholder="Usuario">
                         </div>
                         <div class="form-group ">
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Contraseña">
+                            <input type="password" class="form-control" id="formGroupExampleInput2" name="contrasena" placeholder="Contraseña">
                             <div class="form-group"> <a class="olvide" href="#">Olvide mi contraseña</a></div>
                         </div>
                         <div class="form-group botones">
-                          <button type="submit" class="btn primero bt1">  <a href="paginas/Estudiante/index.html">Ingresar</a></button>
-                            <button type="submit" class="btn btn-outline-secondary bt2">Registrase</button>
+                          <button type="submit" class="btn primero bt1">Ingresar</button>
+                           <!-- <button type="submit" class="btn btn-outline-secondary bt2">Registrase</button> -->
                         </div>
                     </form>
                 </div>
@@ -113,6 +113,6 @@
             </div>
         </div>
     </div>
-    <script src="dist/js/bootstrap.js"></script>
+    <script src="../../8dist/js/bootstrap.js"></script>
 </body>
 </html>
