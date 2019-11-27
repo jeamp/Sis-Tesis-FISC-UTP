@@ -1,7 +1,7 @@
 <?php
 
 //INCLUYENDO EL ARCHIVO DE LA CLASE validar
-require_once("../models/Login.php");
+require_once("../models/LoginAdmin.php");
 
 
 //DECLARACIÓN DE VARIABLES

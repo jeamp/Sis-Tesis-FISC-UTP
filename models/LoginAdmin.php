@@ -18,7 +18,7 @@ class validarLogin
                 
                 $con = new Conexion();
                 //como dice el nombre, preparamos la consulta
-                $consulta = $con->StartConexion()->prepare("SELECT * FROM estudiantes WHERE estCorreo = ? AND password = ?");
+                $consulta = $con->StartConexion()->prepare("SELECT * FROM profesores WHERE proCorreo = ? AND password = ?");
                 //le decimos a la consulta cuáles son los parámetros que le hemos pasado
                 
                 $consulta->bindParam(1, $email);
@@ -33,7 +33,7 @@ class validarLogin
                         while($fila = $consulta->fetch())
                         {
                             //var_dump($fila['nombre']);
-                            header("Location: ../views/Estudiante/index.php");
+                            header("Location: ../views/Admin/index.html");
                             return $estCodigo=$fila[0];     
                         }
                 }

@@ -66,7 +66,6 @@
         .row{
           margin-top: 2%;
         }
-
     </style>
 </head>
 <body>
@@ -88,11 +87,10 @@
                       <a class="nav-link" href="https://ridda2.utp.ac.pa/">Repositorio</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="asesores.html">Asesores</a>
+                      <a class="nav-link" href="asesores.php">Asesores</a>
                     </li>
                   </ul>
-                  <a href="../Admin/index.html" class="btn  my-2">Administrativos</a> |
-                  <a class="text-dark icon">Cerrar Sesión</a> <i class="fas fa-user icon "></i>
+                  <a class="text-dark icon" href="../../index.php">Cerrar Sesión</a> <i class="fas fa-user icon "></i>
             </div>
         </nav>
         <section class="jumbotron text-center bg-white">
@@ -108,7 +106,7 @@
             <div class="row">
                 <div class="col-md-5  text-center  bg-success c">
                     <p class="sub"> Anteproyecto</p>
-                    <div><a href="Registro_Tema.html"><i class="fas fa-pencil-alt icono"></a></i></div>
+                    <div><a href="Registro_Tema.php"><i class="fas fa-pencil-alt icono"></a></i></div>
                 </div>
                 <div class="col text-center bg-light">
                     <p class="msm">Aun no a registrado su Tema</p>

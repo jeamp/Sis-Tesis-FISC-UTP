@@ -1,3 +1,8 @@
+<?php 
+  header('Content-Type: text/html; charset=UTF-8');
+  require("../../controllers/AsesoresController.php");
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +57,7 @@
             width: 40%;
         }
         .card{
-            width: 100%;
+            width: 20%;
             padding: 5%;
         }
         .r{
@@ -106,48 +111,25 @@
                                      <option value="1">Lic Desarrollo Software</option>
                                      <option value="2">Ingenieria</option>
                             </select>
-                            <select class=" col custom-select my-1 mr-sm-2 " id="inlineFormCustomSelectPref">
-                                    <option selected>Nivel Academico</option>
-                                    <option value="1">Lic Desarrollo Software</option>
-                                    <option value="2">Ingenieria</option>
-                           </select>
                         </div>
                    </form>           
             </div>
             <div class="">
-                    <div class="card-deck">
-                            <div class="card">
-                              <img src="../../dist/img/perfil.jpg" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              </div>
-                              <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                              </div>
-                            </div>
-                            <div class="card">
-                              <img src="../../dist/img/perfil.jpg" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                              <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                              </div>
-                            </div>
-                            <div class="card">
-                              <img src="../../dist/img/perfil.jpg" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                              </div>
-                              <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                              </div>
-                            </div>
-                          </div>
-                          
+                <div class="container row">
+                  
+                   <?php foreach($get->show() as $as): ?>
+                    <div class="card ml-5" style="width:20rem;">
+                      <img src="../../<?php  echo $as[3] ?>" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo $as[0]." ".$as[1]; ?></h5>
+                        <p class="card-text"><?php echo $as[2]; ?></p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">3 proyectos</small>
+                      </div>
+                    </div>
+                   <?php endforeach; ?> 
+                </div>        
             </div>     
         </div>
 

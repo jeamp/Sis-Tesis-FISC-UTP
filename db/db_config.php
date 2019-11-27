@@ -12,7 +12,7 @@
             try 
             {
                 $dsn = "mysql:host=localhost;dbname=$dbname";
-                $options = array(PDO::ATTR_ERRMODE => PDO:: ERRMODE_EXCEPTION);
+                $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
                 $conexion = new PDO($dsn, $user_db, $pass_db);
                 $conexion ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     
