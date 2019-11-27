@@ -1,3 +1,7 @@
+<?php 
+  require("../../controllers/adminEntradaController.php");
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,8 +94,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="asesores.html">Asesores</a>
                     </li>
-                  </ul>
-                  <a href="../Estudiante/index.html" class="btn  my-2">Estudiantes</a> |
+                  </ul>            
                   <a class="text-dark icon">Cerrar Sesión</a> <i class="fas fa-user icon "></i>
             </div>
         </nav>
@@ -127,39 +130,22 @@
                               <table class="table table-hover">
                                 <tr>
                                   <th>ID</th>
-                                  <th>Nombre</th>
-                                  <th>Fecha</th>
-                                  <th>Estado</th>
+                                  <th>Titulo</th>
+                                  <th>Asesor</th>
+                                  <th>Estudiante</th>
                                   <th>Carrera</th>
+                                  <th>Ver</th>
                                 </tr>
+                                <?php foreach($entrada->show() as $en): ?>
                                 <tr>
-                                  <td>183</td>
-                                  <td>John Doe</td>
-                                  <td>11-7-2014</td>
-                                  <td><span class="tag tag-success"><a href="revision.html">Ver</a></span></td>
-                                  <td>Desarrollo de Softaware</td>
+                                  <td><?php echo $en[0] ?></td>
+                                  <td><?php echo $en[1] ?></td>
+                                  <td><?php echo $en[4]." ".$en[5] ?></td>
+                                  <td><?php echo $en[2]." ".$en[3] ?></td>
+                                  <td><?php echo $en[6] ?></td>
+                                  <td><a href="revision.html">Ver</a></td>
                                 </tr>
-                                <tr>
-                                  <td>219</td>
-                                  <td>Alexander Pierce</td>
-                                  <td>11-7-2014</td>
-                                  <td><span class="tag tag-warning"><a href="revision.html">Ver</a></span></td>
-                                  <td>Desarrollo de Softaware</td>
-                                </tr>
-                                <tr>
-                                  <td>657</td>
-                                  <td>Bob Doe</td>
-                                  <td>11-7-2014</td>
-                                  <td><span class="tag tag-primary"><a href="revision.html">Ver</a></span></td>
-                                  <td>Desarrollo de Softaware</td>
-                                </tr>
-                                <tr>
-                                  <td>175</td>
-                                  <td>Mike Doe</td>
-                                  <td>11-7-2014</td>
-                                  <td><span class="tag tag-danger"><a href="revision.html">Ver</a></span></td>
-                                  <td>Desarrollo de Softaware</td>
-                                </tr>
+                                <?php endforeach;?>
                               </table>
                             </div>
                             <!-- /.card-body -->
