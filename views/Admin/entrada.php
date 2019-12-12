@@ -133,7 +133,6 @@
                                   <th>Titulo</th>
                                   <th>Asesor</th>
                                   <th>Estudiante</th>
-                                  <th>Carrera</th>
                                   <th>Ver</th>
                                 </tr>
                                 <?php foreach($entrada->show() as $en): ?>
@@ -142,8 +141,7 @@
                                   <td><?php echo $en[1] ?></td>
                                   <td><?php echo $en[4]." ".$en[5] ?></td>
                                   <td><?php echo $en[2]." ".$en[3] ?></td>
-                                  <td><?php echo $en[6] ?></td>
-                                  <td><a href="revision.html">Ver</a></td>
+                                  <td><a href="revision.php?id=<?php echo $en[0]; ?>">Ver</a></td>
                                 </tr>
                                 <?php endforeach;?>
                               </table>
@@ -154,7 +152,6 @@
                         </div>
                       </div><!-- /.row -->
         </div>
-        
         <footer class="footer-f  py-3">
                 <div class="container-f">
                   <span class="text-muted">Universidad tecnologica de Panamá.</span>

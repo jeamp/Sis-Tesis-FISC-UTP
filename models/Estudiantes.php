@@ -3,26 +3,24 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ?>
 <?php 
-include("../db/db_config.php");
-session_start();
-
-
-class validarLogin
+include("../../db/db_config.php");
+class GetEstudiantes
 {
         //FUNCION PARA HACER LOGIN DE USUARIOS
-        public function loginUsuario($email, $password) 
+        public function showE($id) 
         {
-                $estCodigo;
-                $this->correo=$email;
-                $this->pass=$password;
+                $usuario=$id;
                 
                 $con = new Conexion();
                 //como dice el nombre, preparamos la consulta
-                $consulta = $con->StartConexion()->prepare("SELECT * FROM profesores WHERE proCorreo = ? AND password = ?");
+                $consulta = $con->StartConexion()->prepare("SELECT idUsuarios,estNombre,estApellido,estCedula
+                                                                FROM usuarios 
+                                                                JOIN estudiantes on estUsuario = idUsuarios
+                                                                WHERE idUsuarios=?      
+                                                                ");
                 //le decimos a la consulta cuáles son los parámetros que le hemos pasado
                 
-                $consulta->bindParam(1, $email);
-                $consulta->bindParam(2, $password);
+                $consulta->bindParam(1, $usuario);
                 
                 //y la ejecutamos
                 $consulta->execute();
@@ -32,10 +30,11 @@ class validarLogin
                 {
                         while($fila = $consulta->fetch())
                         {
-                            //var_dump($fila['nombre']);
-                            header("Location: ../views/Admin/index.html");
-                            return $estCodigo=$fila[0];     
+                            
+                            $estudiantes[]=$fila;
+                            
                         }
+                    return $estudiantes;
                 }
                 else
                 {

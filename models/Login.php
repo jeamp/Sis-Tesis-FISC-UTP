@@ -3,9 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ?>
 <?php 
-include("../db/db_config.php");
-session_start();
 
+include("../db/db_config.php");
+
+session_start();
 
 class validarLogin
 {
@@ -13,12 +14,15 @@ class validarLogin
         public function loginUsuario($email, $password) 
         {
                 $estCodigo;
-                $this->correo=$email;
-                $this->pass=$password;
+                $this->email=$email;
+                $this->password=$password;
                 
                 $con = new Conexion();
                 //como dice el nombre, preparamos la consulta
-                $consulta = $con->StartConexion()->prepare("SELECT * FROM estudiantes WHERE estCorreo = ? AND password = ?");
+                $consulta = $con->StartConexion()->prepare("SELECT idUsuarios,email,password,roles
+                                                                FROM usuarios 
+                                                                WHERE email = ? AND password = ?      
+                                                                ");
                 //le decimos a la consulta cuáles son los parámetros que le hemos pasado
                 
                 $consulta->bindParam(1, $email);
@@ -32,9 +36,21 @@ class validarLogin
                 {
                         while($fila = $consulta->fetch())
                         {
-                            //var_dump($fila['nombre']);
-                            header("Location: ../views/Estudiante/index.php");
-                            return $estCodigo=$fila[0];     
+                             if($fila['roles']==1){
+                                header("Location: ../views/Estudiante/homeEstudiante.php");
+                                return $_SESSION['id'] =$fila['idUsuarios'];
+                             }
+                             else if($fila['roles']==2){
+                                echo 'funciono';
+                                return $_SESSION['id'] =$fila['idUsuarios'];
+                             }
+                             else if($fila['roles']==3){
+                                header("Location: ../views/Admin/index.html");
+                                return $fila['idUsuarios'];
+                             }else{
+                                     echo 'error';
+                             }     
+                             
                         }
                 }
                 else

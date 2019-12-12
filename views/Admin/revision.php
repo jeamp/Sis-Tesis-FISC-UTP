@@ -113,12 +113,14 @@
                         </object>
                 </div>
                 <div class="col">
-                        <button type="button" class="btn btn-primary">Aprobar</button>
+                        <?php  echo  $id=$_GET['id']; ?>
+                        <button type="button" class="btn btn-success">Aprobar</button>
                         <button type="button" class="btn btn-danger">Rechazar</button>
                         <form>
-                            <div class="form-group">
-                                <input type="texarea col=5">
+                            <div class="form-group mt-3">
+                                <input type="texarea col=5" placeholder="mensaje">
                             </div>
+                            <button type="submit" class="btn btn-primary r">Enviar</button>
                         </form>
                 </div>
             </div>

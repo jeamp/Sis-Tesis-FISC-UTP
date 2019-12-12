@@ -6,7 +6,7 @@
             global $conexion;
             $user_db = 'root';
             $pass_db = 'db.tesis_2019';
-            $dbname = 'anteproyecto1';
+            $dbname = 'anteproyecto';
             $pass_db ='';
             
             try 

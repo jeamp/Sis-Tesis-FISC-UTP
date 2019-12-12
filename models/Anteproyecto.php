@@ -33,7 +33,7 @@ class AnteProyecto
                         $insert->bindParam(7, $archivo);
                         $insert->execute();
                         
-                        echo "<script>alert('Registrado con Exito');window.location.href='../views/Estudiante/index.php';</script>";
+                        echo "<script>alert('Registrado con Exito');window.location.href='../views/Estudiante/homeEstudiante.php';</script>";
 
                 }catch(PDOException $e){
                         echo  $e->getMessage();

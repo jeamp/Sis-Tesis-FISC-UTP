@@ -11,23 +11,21 @@ class Entrada
                 
                 $con = new Conexion();
                 //como dice el nombre, preparamos la consulta
-                $consulta = $con->StartConexion()->prepare("SELECT antCodigo,antTitulo,estNombre,estApellido,proNombre,proApellido,nombreCarrera 
+                $consulta = $con->StartConexion()->prepare("SELECT antCodigo,antTitulo,estNombre,estApellido,proNombre,proApellido
                                                                 FROM anteproyecto 
-                                                                join  estudiantes on estCodigo = antEstudiante
-                                                                join  carreras on idCarreras = estCarrera
-                                                                join profesores on proCodigo = antAsesor   
+                                                                join  estudiantes on estCedula = antEstudiante
+                                                                join profesores on proCedula = antAsesor   
                                                             ");
                 $consulta->execute();
-
                 //si hay un resultado en la consulta 
                 if ($consulta->rowCount()>= 1) 
                 {
-                        while($fila = $consulta->fetch())
-                        {
-                         $entradas[] = $fila;   
+                    while($fila = $consulta->fetch())
+                    {
+                        $entradas[] = $fila;   
 
-                        }
-                        return $entradas; 
+                    }
+                    return $entradas; 
                 }
                 else
                 {
